@@ -32,12 +32,12 @@ const StartPage = () => {
         <p className="mb-20 sm:text-3xl font-bold">
           你的內心貓咪，正等待甦醒。
         </p>
-        <p className="text-lg sm:text-base mb-10 mt-7 leading-relaxed">
+        <p className="text-sm sm:text-base mb-10 mt-7 leading-relaxed">
           六位貓長老已聚集於月下石陣，<br />
           他們將引導你完成六道試煉，<br />
           找出你內心真正潛伏的貓咪性格。
         </p>
-        
+
         <button onClick={nextStep} className="text-base px-6 py-2 rounded-xl mt-7 bg-white text-black hover:bg-gray-100">
           開始試煉
         </button>

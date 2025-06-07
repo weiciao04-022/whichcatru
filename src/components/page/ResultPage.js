@@ -56,8 +56,8 @@ export default function ResultPage() {
       {/* 前景與按鈕區塊 */}
       <div className="relative z-10 w-full flex flex-col items-center px-4 py-6">
         <div className="w-full max-w-[680px] flex flex-col items-center gap-6">
-          {/* 前景圖容器：寬度限制並等比縮放，電腦為上下，手機為左右 */}
-          <div className="relative w-full aspect-[393/852] sm:aspect-auto sm:h-[calc(100vh-120px)]">
+          {/* 前景圖容器 */}
+          <div className="relative w-full sm:w-full max-w-[680px] aspect-[393/852] sm:aspect-auto sm:h-[calc(100vh-160px)]">
             <Image
               src={getResultImage(score)}
               alt="前景圖"
