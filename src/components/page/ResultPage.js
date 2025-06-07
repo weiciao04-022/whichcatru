@@ -53,11 +53,11 @@ export default function ResultPage() {
         priority
       />
 
-      {/* 內容容器：置中對齊且有上下 padding */}
+      {/* 前景與按鈕區塊 */}
       <div className="relative z-10 w-full flex flex-col items-center px-4 py-6">
-        <div className="w-full max-w-[680px] flex flex-col gap-6 items-center">
-          {/* 前景圖區塊：等比縮放，適應螢幕 */}
-          <div className="relative w-full aspect-[393/852]">
+        <div className="w-full max-w-[680px] flex flex-col items-center gap-6">
+          {/* 前景圖容器：寬度限制並等比縮放，電腦為上下，手機為左右 */}
+          <div className="relative w-full aspect-[393/852] sm:aspect-auto sm:h-[calc(100vh-120px)]">
             <Image
               src={getResultImage(score)}
               alt="前景圖"
@@ -67,7 +67,7 @@ export default function ResultPage() {
             />
           </div>
 
-          {/* 按鈕區塊：寬度同前景圖，並在下方貼齊 */}
+          {/* 按鈕區塊 */}
           <div className="flex flex-row gap-4 w-full">
             <button
               className="bg-[#AA5F26] flex-1 rounded-full text-white py-3 text-sm font-medium shadow-[0px_4px_0px_1px_#84491C] hover:translate-y-0.5 transition"
