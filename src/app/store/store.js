@@ -19,7 +19,11 @@ const usePsyStore = create((set) => ({
 const useQuestionStore = create((set) => ({
   questions: {
     "1":{
-      title: "【第一站】霧中的小徑你走入森林，一切安靜得過分，忽然出現三條路。 你會選哪條？",
+      title: <div className="text-base leading-relaxed text-center">
+      <p>【第一站】霧中的小徑</p>
+      <p>你走入森林，一切安靜得過分，忽然出現三條路。</p>
+      <p>你會選哪條？</p>
+    </div>,
       options: [
         {title: "帶著遠方鳥鳴聲的薄霧小路", value: 2},
         {title: "長滿苔癬、陽光斑駁的老石階", value: 4},
@@ -27,7 +31,10 @@ const useQuestionStore = create((set) => ({
       ]
     },
     "2":{
-      title: "【第二站】失語書店你進入一間舊書店，書都沒有書名，牆邊有一本你特別想翻開的書。 你會翻哪一本？",
+      title: <div className="text-base leading-relaxed text-center">
+      <p>【第二站】失語書店</p>
+      <p>你進入一間舊書店，書都沒有書名，牆邊有一本你特別想翻開的書。</p>
+      <p>你會翻哪一本？</p></div>,
       options: [
         {title: "有咖啡漬痕跡、像剛有人翻過的日記", value: 3},
         {title: "被鎖住但上頭有你名字的封面", value: 1},
@@ -35,7 +42,10 @@ const useQuestionStore = create((set) => ({
       ]
     },
     "3":{
-      title: "【第三站】鏡子走廊走廊兩邊都是鏡子，但每一面映出的你都不太一樣。 你決定……你會做什麼？",
+      title: <div className="text-base leading-relaxed text-center">
+      <p>【第三站】鏡子走廊</p>
+      <p>走廊兩邊都是鏡子，但每一面映出的你都不太一樣。你決定……</p>
+      <p>你會做什麼？</p></div>,
       options: [
         {title: "立對一面看起來像小時候的你說話", value: 4},
         {title: "快速通過，避免和任何一面對視", value: 2},
@@ -43,7 +53,10 @@ const useQuestionStore = create((set) => ({
       ]
     },
     "4":{
-      title: "【第四站】貓的房間 一間佈滿枕頭與織毯的房間中，你看到一群不同風格的貓正在午睡。 你想靠近哪一隻？",
+      title: <div className="text-base leading-relaxed text-center">
+      <p>【第四站】貓的房間</p>
+      <p>一間佈滿枕頭與織毯的房間中，你看到一群不同風格的貓正在午睡。</p>
+      <p>你想靠近哪一隻？</p></div>,
       options: [
         {title: "那隻正在夢中說夢話的小貓", value: 3},
         {title: "那隻把頭埋在書裡的黑貓", value: 1},
@@ -51,7 +64,10 @@ const useQuestionStore = create((set) => ({
       ]
     },
     "5":{
-      title: "【第五站】月台上的貓車 你走到最後的車站，站牌寫著「只送抵你自己心底的地方」。 有六節車廂，每節都有一隻貓趴著看你。你會走向哪節？",
+      title: <div className="text-base leading-relaxed text-center">
+      <p>【第五站】月台上的貓車</p>
+      <p>你走到最後的車站，站牌寫著「只送抵你自己心底的地方」。 有六節車廂，每節都有一隻貓趴著看你。</p>
+      <p>你會走向哪節？</p></div>,
       options: [
         {title: "最愛美的緬因貓", value: 5},
         {title: "疲倦但神秘的銀色貓", value: 1},

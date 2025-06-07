@@ -11,12 +11,22 @@ import q5 from '@/../public/1.question/q5background.png';
 
 const backgroundMap = [q1, q2, q3, q4, q5];
 
+const buttonStyleMap = [
+  { bg: 'bg-[#5581A1]' }, // q1: 藍
+  { bg: 'bg-[#D39336]' }, // q2: 橘
+  { bg: 'bg-[#34483D]' }, // q3: 綠
+  { bg: 'bg-[#8B3D02]' }, // q4: 紫粉
+  { bg: 'bg-[#3D4967]' }, // q5: 靛藍
+];
+
 export default function QuestionPage({ questionIndex, nextStep }) {
   const { questions } = useQuestionStore();
   const updateScore = usePsyStore((state) => state.updateScore);
   const score = usePsyStore((state) => state.score);
 
-  const question = questions[(questionIndex + 1).toString()];
+  const question = questions?.[(questionIndex + 1).toString()];
+  if (!question) return null;
+
   const { title, options } = question;
 
   const handleClick = (option) => {
@@ -25,14 +35,7 @@ export default function QuestionPage({ questionIndex, nextStep }) {
     nextStep();
   };
 
-  const buttonStyleMap = [
-    { bg: 'bg-[#5581A1]', shadow: 'shadow-[0px_4px_0px_1px_#476AD4]' }, // q1: 藍
-    { bg: 'bg-[#D39336]', shadow: 'shadow-[0px_4px_0px_1px_#D99925]' }, // q2: 橘
-    { bg: 'bg-[#34483D]', shadow: 'shadow-[0px_4px_0px_1px_#336F6B]' }, // q3: 綠
-    { bg: 'bg-[#8B3D02]', shadow: 'shadow-[0px_4px_0px_1px_#8D5889]' }, // q4: 紫粉
-    { bg: 'bg-[#3D4967]', shadow: 'shadow-[0px_4px_0px_1px_#394F7B]' }, // q5: 靛藍
-  ];
-  
+  const { bg } = buttonStyleMap[questionIndex] || {};
 
   return (
     <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
@@ -45,21 +48,17 @@ export default function QuestionPage({ questionIndex, nextStep }) {
       />
 
       <div className="relative z-10 flex flex-col items-center gap-[26px] px-6 max-w-2xl text-center text-white">
-        {/* 題號圈圈 */}
-        
-
-        {/* 題目內容 */}
-        <div className="font-bold text-2xl sm:text-3xl whitespace-pre-wrap mb-[60px]">
+        <div className="font-bold text-2xl sm:text-2xl whitespace-pre-wrap mb-[60px]">
           {title}
         </div>
 
-        {/* 選項按鈕 */}
         <div className="flex flex-col gap-4 w-full items-center">
           {options.map((option, index) => (
             <div
               key={option.title + index}
               onClick={() => handleClick(option)}
-              className="bg-white text-black w-[300px] rounded-full py-[16px] text-sm flex justify-center items-center font-medium shadow-[0px_4px_0px_1px_#FFFFFF] cursor-pointer hover:translate-y-0.5 transition"
+              className={`${bg}  text-white w-[300px] rounded-full py-[16px] text-sm flex justify-center 
+              items-center font-medium cursor-pointer hover:translate-y-0.5 transition`}
             >
               {option.title}
             </div>
